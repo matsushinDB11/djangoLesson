@@ -17,7 +17,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # read .env file
-env = environ.Env()
+env = environ.Env(
+    DEBUG=(bool, False)
+)
 env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
